@@ -24,4 +24,7 @@ urlpatterns = [
 
     # allauth
     path('accounts/', include('allauth.urls')),
+
+    # Self created urls
+    path('', include('home.urls')),
 ]
