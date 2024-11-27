@@ -18,5 +18,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # Tailwind
     path("__reload__/", include("django_browser_reload.urls")),
+
+    # allauth
+    path('accounts/', include('allauth.urls')),
 ]
