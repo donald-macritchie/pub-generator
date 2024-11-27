@@ -2,14 +2,49 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-        <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{% tailwind_css %}
-        <title>ABDN Pub Generator</title>
+        {% block meta %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% endblock %}
+
+        {% block extrameta %}
+        {% endblock %}
+		
+        {% tailwind_css %}
+
+        {% block corecss %}
+        {% endblock %}
+
+        {% block extracss %}
+        {% endblock %}
+
+        {% block corejs %}
+        {%endblock %}
+
+        {% block extrajs %}
+        {% endblock %}
+
+        <title>ABDN Pub Generator {% block extra_title %}{% endblock %}</title>
 	</head>
 
 	<body>
-		
+		<header class="fixed-top container fluid"></header>
+
+        {% if messages %}
+            <div class="message-container"></div>
+        {% endif %}
+
+        {% block page_header %}
+        <!-- If a sub header is need underneath the main header -->
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+
+        {% block postloadjs %}
+        <!-- for any js that needs to be loaded after the html -->
+        {% endblock %}
+
 	</body>
 </html>
